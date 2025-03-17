@@ -1,33 +1,37 @@
-from _Node import _Node
+from DoublyLinkedBase import _DoublyLinkedBase
 
-class _DoublyLinkedBase:
+class DoubleLinkedList(_DoublyLinkedBase):
+    def insert_first(self, element):
+        return self._insert_between(element, self.header, self.header._next)
     
-    def __init__(self):
-        self.header = _Node(None, None, None)
-        self.tailer = self._Node(None, None, None)
-        self._header._next = self.tailer
-        self._tailer._prev = self.header
-        self._size = 0
-        
-    def __len__(self):
-        return self._size
+    def insert_last(self, element):
+        return self._insert_between(element, self.tailer._prev, self.tailer)
     
-    def is_empty(self):
-        return self._size == 0
+    def delete_first(self):
+        if self.is_empty():
+            raise Exception("List is empty")
+        return self._delete_node(self.header._next)
     
-    def _insert_between(self, element, PrevNode, NextNode):
-        newNode = self._Node(element, NextNode, PrevNode)
-        PrevNode._next = newNode
-        NextNode._prev = newNode
-        self._size += 1
-        return newNode
+    def delete_last(self):
+        if self.is_empty():
+            raise Exception("List is empty")
+        return self._delete_node(self.tailer._prev)
     
-    def _delete_node(self, node):
-        PrevNode = node._prev
-        NextNode = node._next
-        PrevNode._next = NextNode
-        NextNode._prev = PrevNode
-        self._size -= 1
-        element = node._element
-        node._prev = node._next = node._element = None
-        return element
+    def __iter__(self):
+        current = self.header._next
+        while current is not self.tailer:
+            yield current._element
+            current = current._next
+            
+dll = DoubleLinkedList()
+dll.insert_first(10)
+dll.insert_last(5)
+dll.insert_last(15)
+
+print("현재 리스트 : ", list(dll))
+
+dll.delete_first()
+print("첫번째 원소 삭제 이후 : ", list(dll))
+
+dll.delete_last()
+print("마지막 원소 삭제 이후 : ", list(dll))
