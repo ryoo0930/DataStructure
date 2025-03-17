@@ -22,4 +22,12 @@ class _DoublyLinkedBase(_Node):
         self._size += 1
         return newNode
     
-    
+    def _delete_node(self, node):
+        PrevNode = node._prev
+        NextNode = node._next
+        PrevNode._next = NextNode
+        NextNode._prev = PrevNode
+        self._size -= 1
+        element = node._element
+        node._prev = node._next = node._element = None
+        return element
