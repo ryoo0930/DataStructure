@@ -16,3 +16,7 @@ pos = pl.after(pl.first())
 pl.add_before(pos, 90)
 
 print(list(pl))
+
+pl.add_after(pos, 70)
+
+print(list(pl))
