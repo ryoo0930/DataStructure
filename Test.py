@@ -1,22 +1,14 @@
 from PositionalList import _PositionalList
+from BinarySearch import binary_search
 
 pl = _PositionalList()
-pl.add_first(10)
-pl.add_first(20)
-pl.add_last(40)
-
+for i in range(5):
+    value = 100 - (i * 10)
+    pl.add_first(value)
+    
+    
 print(list(pl))
+data = list(pl)
 
-pos = pl.first()
-pl.add_after(pos, 30)
-
-print(list(pl))
-
-pos = pl.after(pl.first())
-pl.add_before(pos, 90)
-
-print(list(pl))
-
-pl.add_after(pos, 70)
-
-print(list(pl))
+target = 70
+print("target :", target, "\'s index :", binary_search(data, target, 0, len(data) - 1))
