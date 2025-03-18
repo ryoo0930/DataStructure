@@ -27,3 +27,9 @@ class _LinkedDeque(_DoublyLinkedBase):
         if self.is_empty():
             raise print("Deque is empty")
         return self._delete_node(self._trailer._prev)
+    
+    def __iter__(self):
+        current = self._header._next
+        while current is not self._trailer:
+            yield current._element
+            current = current._next
