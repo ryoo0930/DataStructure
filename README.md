@@ -3,6 +3,6 @@ DataStructures with python
 
 Test.py : Test DataStructure 
 
-ListArrays : MyList - ArrayBasedList
-DoublyLinkedList : DoublyLinkedBase - LinkedDeque
-PositionalList : DoublyLinkedBase - PositionalList
+<br> ListArrays : MyList - ArrayBasedList
+<br> DoublyLinkedList : DoublyLinkedBase - LinkedDeque
+<br> PositionalList : DoublyLinkedBase - PositionalList
