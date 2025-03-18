@@ -33,3 +33,4 @@ class _LinkedDeque(_DoublyLinkedBase):
         while current is not self._trailer:
             yield current._element
             current = current._next
+            

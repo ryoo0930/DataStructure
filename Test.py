@@ -1,9 +1,7 @@
-from LinkedDeque import _LinkedDeque
+from PositionalList import _PositionalList
 
-ld = _LinkedDeque()
-ld.insert_first(20)
-ld.insert_first(30)
-ld.insert_last(50)
-ld.insert_last(60)
+pl = _PositionalList()
+pl.add_first(10)
 
-print(list(ld))
+
+print(list(pl))
