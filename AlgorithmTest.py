@@ -1,4 +1,3 @@
-from ArrayBasedMergeSort import merge
 from ArrayBasedMergeSort import merge_sort
 
 arr = [10, 40, 50, 30, 60, 20, 70]
