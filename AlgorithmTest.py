@@ -1,7 +1,10 @@
-from ArrayBasedMergeSort import merge_sort
+from LinkedQueue import _LinkedQueue
 
-arr = [10, 40, 50, 30, 60, 20, 70]
-print("현재 리스트 :", arr)
+lq = _LinkedQueue()
 
-merge_sort(arr)
-print("졍렬 후 리스트 :", arr)
+for i in range(5):
+    value = 100 - (i * 10)
+    lq.enqueue(value)
+    
+for i in range(5):
+    print(lq.dequeue())
