@@ -12,3 +12,4 @@ Test.py : Test DataStructure
 <br> Algorithm :
 <br> Binary Search
 <br> Merge Sort
+<br> Quick Sort
