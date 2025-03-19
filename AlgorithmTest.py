@@ -1,14 +1,8 @@
-from PositionalList import _PositionalList
-from BinarySearch import binary_search
+from ArrayBasedMergeSort import merge
+from ArrayBasedMergeSort import merge_sort
 
-pl = _PositionalList()
-for i in range(5):
-    value = 100 - (i * 10)
-    pl.add_first(value)
-    
-    
-print(list(pl))
-data = list(pl)
+arr = [10, 40, 50, 30, 60, 20, 70]
+print("현재 리스트 :", arr)
 
-target = 70
-print("target :", target, "\'s index :", binary_search(data, target, 0, len(data) - 1))
+merge_sort(arr)
+print("졍렬 후 리스트 :", arr)
