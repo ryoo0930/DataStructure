@@ -16,7 +16,7 @@ class HashMapBase(MapBase):
     
     def __getitem__(self, k):
         j = self._hash_function(k)
-        return self._bucket_getitem(j, k) # 이거 잘 모르겠음. _bucket_getitem 함수가 어디서 나온거지?
+        return self._bucket_getitem(j, k) # <- Collision Handling 하면서 정의함.
     
     def __setitem__(self, k, v):
         j = self._hash_function(k)
