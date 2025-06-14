@@ -1,7 +1,5 @@
 from collections.abc import MutableMapping
-
 class MapBase(MutableMapping):
-    
     class _Item:
         __slot__ = '_key', '_value'
         
@@ -17,5 +15,5 @@ class MapBase(MutableMapping):
         
         def __lt__(self, other):
             return self._key < other._key
-    
-    
+        
+        
